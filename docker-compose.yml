@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:latest
+    container_name: order_db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: ordersdb
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: order_app
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: myuser
+      DB_PASS: mypassword
+      DB_NAME: ordersdb
+
+volumes:
+  db-data:
