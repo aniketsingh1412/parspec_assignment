@@ -60,7 +60,7 @@ Getting Started
 ---------------
 1. Clone the Repository
 
-   git clone https://github.com/yourusername/order-processing-system.git
+   git clone https://github.com/aniketsingh1412/parspec_assignment.git
    cd order-processing-system
 
 2. Set Up Environment Variables (Optional)
