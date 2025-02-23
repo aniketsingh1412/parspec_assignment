@@ -149,6 +149,10 @@ API Endpoints
        }
      }
 
+   curl : curl -X POST http://localhost:3000/orders \
+          -H "Content-Type: application/json" \
+          -d '{"userId": "user-123", "itemIds": ["item1", "item2"], "totalAmount": 59.99}'
+
 2. Get Order by ID
    - Endpoint: GET /orders/:id
    - Response Example:
@@ -181,6 +185,8 @@ API Endpoints
          "completed": 5
        }
      }
+
+    curl :  curl -X GET http://localhost:3000/metrics
 
 Design Overview
 ---------------
